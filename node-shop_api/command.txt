@@ -1,0 +1,22 @@
+#Managing the MongoDB Service
+
+To verify the status of the service, type
+sudo systemctl status mongodb
+You can stop the server anytime by typing:
+sudo systemctl stop mongodb
+To start the server when it is stopped, type:
+sudo systemctl start mongodb
+You can also restart the server with a single command:
+
+sudo systemctl restart mongodb
+
+By default, MongoDB is configured to start automatically with the server. If you wish to disable the automatic startup, type:
+sudo systemctl disable mongodb
+It’s just as easy to enable it again. To do this, use:
+sudo systemctl enable mongodb
+
+
+We can verify this further by actually connecting to the database server and executing a diagnostic command
+
+Execute this command:
+mongo --eval 'db.runCommand({ connectionStatus: 1 })'

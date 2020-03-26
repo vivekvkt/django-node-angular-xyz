@@ -1,0 +1,4 @@
+WARNING:root:this is the warning
+DEBUG:root:this is the debug process
+INFO:root:this is the info process
+WARNING:root:this is the warning
