@@ -7,7 +7,9 @@ from .views import (
     #GenericStatusCreateAPIView,
     #GenericStatusDetailAPIView,
     # GenericStatusUpdateAPIView,
-    # GenericStatusDeleteAPIView
+    # GenericStatusDeleteAPIView,
+    StatusAPIDetailView,
+    
 )
 
 urlpatterns = [
@@ -22,5 +24,6 @@ urlpatterns = [
     #url(r'^(?P<pk>\d+)/$',GenericStatusDetailAPIView.as_view()),
     # url(r'^(?P<pk>\d+)/update/$',GenericStatusUpdateAPIView.as_view()),
     # url(r'^(?P<pk>\d+)/delete/$',GenericStatusDeleteAPIView.as_view()),
+    url(r'^(?P<id>\d+)/$', StatusAPIDetailView.as_view()),
     
 ]

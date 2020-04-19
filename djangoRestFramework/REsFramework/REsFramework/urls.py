@@ -16,11 +16,15 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from updates.views import json_example_view,JsonCBV,JsonCBV2
+# from rest_framework_jwt.views import refresh_jwt_token , obtain_jwt_token
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^json-example/$', json_example_view),
     url(r'^JsonCBV/$', JsonCBV.as_view(), name='JsonCBV'),
     url(r'^JsonCBV2/$', JsonCBV2.as_view(), name='JsonCBV2'),
+    url(r'^api/auth/', include('accounts.api.urls')),
     url(r'^api/status/', include('status.api.urls')),
+    # url(r'^api/jwt-token/$', obtain_jwt_token),
+    # url(r'^api/jwt-refresh-token/$', refresh_jwt_token),
 ]
