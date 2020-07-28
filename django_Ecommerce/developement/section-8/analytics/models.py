@@ -14,9 +14,9 @@ FORCE_SESSION_TO_ONE = getattr(settings, 'FORCE_SESSION_TO_ONE',False)
 FORCE_INACTIVE_USER_ENDSESSION = getattr(settings, 'FORCE_INACTIVE_USER_ENDSESSION',False)
 
 class ObjectViewed(models.Model):
-    user = models.ForeignKey(User, blank=True,null=True) #User instance instance.id
+    user = models.ForeignKey(User, blank=True,null=True,on_delete=models.CASCADE) #User instance instance.id
     ip_address = models.CharField(max_length=220,null=True, blank=True) # ip field
-    content_type  = models.ForeignKey(ContentType) #user, product, order , cart, address
+    content_type  = models.ForeignKey(ContentType,on_delete=models.CASCADE) #user, product, order , cart, address
     object_id = models.PositiveIntegerField() # user id, product id, order id
     content_object = GenericForeignKey('content_type','object_id') # product instance
     timestamp = models.DateField(auto_now_add=True)
@@ -43,7 +43,7 @@ object_viewed_signal.connect(object_viewed_reciever)
 
 
 class UserSession(models.Model):
-    user = models.ForeignKey(User, blank=True,null=True) #User instance instance.id
+    user = models.ForeignKey(User, blank=True,null=True,on_delete=models.CASCADE) #User instance instance.id
     ip_address = models.CharField(max_length=220,null=True, blank=True) # ip field
     session_key = models.CharField(max_length=220, null=True, blank=True)
     timestamp = models.DateField(auto_now_add=True)
