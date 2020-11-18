@@ -1483,9 +1483,20 @@ print(a1 is a2)
 # a.add(10)
 # print(a)
 
-a = range(10)
-d = [ x for x in a if x %2 !=0]
-print(d)
+# a = range(10)
+# d = [ x for x in a if x %2 !=0]
+# print(d)
+
+
+x = [[1,2,3],[4,4,5],[0,2,1]]
+y  =  [[1,2,3],[4,4,5],[0,2,1]]
+res =  [[0,0,0],[0,0,0],[0,0,0]]
+
+for i in range(len(x)):
+    for j in range(len(x[0])):
+        res[i][j] = x[i][j] + y[i][j]
+for d in res:
+    print(d)
 
     
     

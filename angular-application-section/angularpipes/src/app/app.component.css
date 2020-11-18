@@ -1,0 +1,5 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.container{
+    margin-top: 30px;
+}
