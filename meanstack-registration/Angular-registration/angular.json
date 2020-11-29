@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "Angular-registration"
+  "defaultProject": "Angular-registration",
+  "cli": {
+    "analytics": "35b614a6-aa8d-4ccc-bef3-b46f9aa6f9a3"
+  }
 }
