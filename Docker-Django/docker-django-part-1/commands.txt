@@ -1,0 +1,42 @@
+docker-compose run django django-admin startproject core .
+docker exec -it postgres psql -U postgres
+
+docker-compose up / down
+sudo snap start docker # start the service
+sudo snap stop docker # stop the service
+sudo chmod 777  /var/run/docker.sock
+docker rm <CONTAINER ID>
+
+docker system prune , #Docker provides a single command that will clean up any resources — 
+                    #images, containers, volumes, and networks — that are dangling (not associated with a container):
+
+docker ps -a
+docker images -a 
+docker volume ls
+Stop all running containers: docker stop $(docker ps -a -q) 
+Delete all stopped containers: docker rm $(docker ps -a -q)
+docker stop 8c6be9547a71 # stop container
+docker rm 8c6be9547a71  # remove container
+Remove All Docker Containers:
+docker rm -f $(docker ps -a -q)
+Postgres
+==========
+
+docker exec -it postgres psql -U postgres
+\c <database_name>
+\d
+\d+ <table_name>
+\q
+
+
+==========
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'pgdb',
+        'PORT': 5432,
+    }
+}
