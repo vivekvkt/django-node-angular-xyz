@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 
-from django.conf.urls import url, include
+from django.urls import path, include
 from django.contrib import admin
 from django.contrib.auth.views import LogoutView
 from django.views.generic import TemplateView
@@ -28,24 +28,29 @@ from carts.views import cart_detail_api_view
 
 from .views import home_page, about_page, contact_page
 
+
+app_name = 'carts'
+
+app_name = 'products'
+app_name = 'search'
 urlpatterns = [
-    url(r'^$', home_page, name='home'),
-    url(r'^about/$', about_page, name='about'),
-    url(r'^contact/$', contact_page, name='contact'),
-    url(r'^login/$', LoginView.as_view(), name='login'),
-    url(r'^checkout/address/create/$', checkout_address_create_view, name='checkout_address_create'),
-    url(r'^checkout/address/reuse/$', checkout_address_reuse_view, name='checkout_address_reuse'),
-    url(r'^register/guest/$', guest_register_view, name='guest_register'),
-    url(r'^logout/$', LogoutView.as_view(), name='logout'),
-    url(r'^api/cart/$', cart_detail_api_view, name='api-cart'),
-    url(r'^cart/', include("carts.urls", namespace='cart')),
-    url(r'^register/$', RegisterView.as_view(), name='register'),
-    url(r'^billing/payment/$',payment_method_view, name='payment'),
-     url(r'^billing/payment/create/$',payment_method_createview, name='payment-create'),
-    url(r'^bootstrap/$', TemplateView.as_view(template_name='bootstrap/example.html')),
-    url(r'^products/', include("products.urls", namespace='products')),
-    url(r'^search/', include("search.urls", namespace='search')),
-    url(r'^admin/', admin.site.urls),
+    path('', home_page, name='home'),
+    path('about/', about_page, name='about'),
+    path('contact/', contact_page, name='contact'),
+    path('login/', LoginView.as_view(), name='login'),
+    path('checkout/address/create/', checkout_address_create_view, name='checkout_address_create'),
+    path('checkout/address/reuse/', checkout_address_reuse_view, name='checkout_address_reuse'),
+    path('register/guest/', guest_register_view, name='guest_register'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('api/cart/', cart_detail_api_view, name='api-cart'),
+    path('cart/', include("carts.urls", namespace='cart')),
+    path('register/', RegisterView.as_view(), name='register'),
+    path('billing/payment/',payment_method_view, name='payment'),
+    path('billing/payment/create/',payment_method_createview, name='payment-create'),
+    path('bootstrap/', TemplateView.as_view(template_name='bootstrap/example.html')),
+    path('products/', include("products.urls", namespace='products')),
+    path('search/', include("search.urls", namespace='search')),
+    path('admin/', admin.site.urls),
 ]
 
 

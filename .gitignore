@@ -3,9 +3,15 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+
+# virtual  env
+.evnblog/
+.evnblog
+/django_blog/evnblog
 # C extensions
 *.so
 
+/nodejsRestFullApi/node-shop-api/node_modules
 # Distribution / packaging
 .Python
 build/
@@ -109,6 +115,10 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+ecommercestore/envstore/
+ecommerce-store-part-2/env/
+
 
 # Spyder project settings
 .spyderproject
