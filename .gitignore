@@ -121,7 +121,10 @@ venv.bak/
 ecommercestore/envstore/
 ecommerce-store-part-2/env/
 .envpynlp
-.Machine-learning/NLP/nlp_chatbot/envpynlp/
+envpynlp/
+./envpynlp
+envpynlp/
+
 
 
 # Spyder project settings
