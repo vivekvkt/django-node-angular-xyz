@@ -1,0 +1,5 @@
+conda uninstall pytorch
+pip uninstall torch
+pip uninstall torch # run this command twice
+
+conda uninstall pytorch torchvision cuda80 -c soumith
