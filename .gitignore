@@ -121,9 +121,11 @@ venv.bak/
 ecommercestore/envstore/
 ecommerce-store-part-2/env/
 .envpynlp
-envpynlp/
-./envpynlp
-envpynlp/
+*.envpynlp
+Machine-learning/envpynlp/
+
+
+
 
 
 
